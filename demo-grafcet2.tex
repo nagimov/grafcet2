@@ -1,0 +1,467 @@
+% ---------------------------------------------------------------------------- %
+%                          GRAFCET2 0.1 USAGE EXAMPLE                          %
+% ---------------------------------------------------------------------------- %
+%         Ruslan Nagimov                                                       %
+%         github: http://nagimov.github.com/grafcet2/                          %
+%         e-mail: nagimov@outlook.com                                          %
+% ---------------------------------------------------------------------------- %
+% The documents is based on Pierre Chatelier's original latex demo for grafcet %
+% 1.0 package.                                                                 %
+%         e-mail: pierre.chatelier@club-internet.fr                            %
+%         web: http://perso.club-internet.fr/ktd                               %
+% This document shows the usage examples for grafcet2 package.                 %
+% ---------------------------------------------------------------------------- %
+
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage{grafcet2}
+
+\usepackage{vmargin}
+\setmarginsrb{2cm}{2cm}{2cm}{2cm}{2cm}{0cm}{2cm}{0cm}
+
+\begin{document}
+
+\author{Ruslan Nagimov\\
+        \emph{e-mail: nagimov@outlook.com}\\
+        \emph{http://nagimov.github.com/grafcet2/}\\
+       }
+\title{Demonstration of ``grafcet2 0.1'' package.}
+\maketitle
+
+\tableofcontents
+\clearpage
+
+%Table of grafcets
+The table of grafcets is inserted using the following command:
+\begin{verbatim}
+\listofgrafcets
+\end{verbatim}
+\listofgrafcets
+\clearpage
+
+% Usage of basic commands
+\section{Basic Commands: $\backslash$Step, $\backslash$Transition, $\backslash$Nop}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{This is a wonderful step.}
+\Transition{This is transition...}
+\Step{And the last step!}
+\Nop
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Step{This is a wonderful step.}
+\Transition{This is transition...}
+\Step{And the last step!}
+\Nop
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% How to insert grafcet caption
+\section{Grafcet Caption: $\backslash$caption}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{This is a wonderful step.}
+\Transition{This is transition...}
+\Step{And the last step!}
+\Nop
+\caption{How to insert grafcet caption}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.4\linewidth}
+\begin{grafcet}
+\Step{This is a wonderful step.}
+\Transition{This is transition...}
+\Step{And the last step!}
+\Nop
+\caption{How to insert grafcet caption}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Multi-lined
+\section{Multiple Lines in Description}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{Description can be \\
+      split to few lines \\ \hline
+      as shown in the picture}
+\Transition{Description of
+            transitions cannot
+            be split to few lines}
+\caption{Multiple lines description}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.4\linewidth}
+\begin{grafcet}
+\Step{Description can be \\
+      split to few lines \\ \hline
+      as shown in the picture}
+\Transition{Description of
+            transitions cannot
+            be split to few lines}
+\caption{Multiple lines description}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% The first step
+\section{The First Step: $\backslash$FirstStep}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\FirstStep{The initial step of the \\
+      sequence has a special symbol}
+\Transition{condition}
+\Step{\ldots}
+\Nop
+\caption{Initial Step}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.5\linewidth}
+\begin{grafcet}
+\FirstStep{The initial step of the \\
+      sequence has a special symbol}
+\Transition{condition}
+\Step{\ldots}
+\Nop
+\caption{Displaying initial step}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Macro Steps
+\section{Macro Steps: $\backslash$MacroStep}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{\ldots}
+\Transition{condition}
+\MacroStep{There is also special
+           symbol for macro steps}
+\Transition{condition}
+\Step{\ldots}
+\caption{Macro step}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.5\linewidth}
+\begin{grafcet}
+\Step{\ldots}
+\Transition{condition}
+\MacroStep{There is also special
+           symbol for macro steps}
+\Transition{condition}
+\Step{\ldots}
+\caption{Macro step}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Jumps
+\section{Jump Steps: $\backslash$Jump}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{\ldots}
+\Transition{condition}
+\Jump{\ldots and special symbol 
+      for jump operator}
+\Transition{condition}
+\Step{\ldots}
+\caption{Jump step}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.5\linewidth}
+\begin{grafcet}
+\Step{\ldots}
+\Transition{condition}
+\Jump{\ldots and special symbol 
+      for jump operator}
+\Transition{condition}
+\Step{\ldots}
+\caption{Jump step}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Automatic Numeration
+\section{Automatic Numeration}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{Note that\ldots}
+\Transition{condition}
+\Step{numeration\ldots}
+\Transition{condition}
+\Step{is automatic}
+\Nop
+\caption{Automatic numeration}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Step{Note that\ldots}
+\Transition{condition}
+\Step{numeration\ldots}
+\Transition{condition}
+\Step{is automatic}
+\Nop
+\caption{Automatic numeration}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Imposed Numeration
+\section{Imposed Numeration}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{The numeration
+      is automatic\ldots}
+\Transition{condition}
+\Step{automatic\ldots}
+\Transition{condition}
+\Step[19]{\textbf{Imposed
+                  numeration}}
+\Transition{condition}
+\Step{is also automatically
+      continued}
+\Nop
+\caption{Imposed numeration}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Step{The numeration
+      is automatic\ldots}
+\Transition{condition}
+\Step{automatic\ldots}
+\Transition{condition}
+\Step[19]{\textbf{Imposed
+                  numeration}}
+\Transition{condition}
+\Step{is also automatically
+      continued}
+\Nop
+\caption{Imposed numeration}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Divergence
+\section{Divergence: $\backslash$Divergence}
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{Add the divergence\ldots}
+\Divergence
+{
+  \Transition{$a.b$}
+  \Step{\ldots}
+  \Transition{condition}
+  \Step{\ldots}
+  \Transition{condition}
+}
+{
+  \Transition{$a.\bar{b}$}
+  \Step{\ldots}
+  \Transition{condition}
+}
+\Step{\ldots and merge it here}
+\Transition{\ldots}
+\caption{Divergence}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Step{Add the divergence\ldots}
+\Divergence
+{
+  \Transition{$a.b$}
+  \Step{\ldots}
+  \Transition{condition}
+  \Step{\ldots}
+  \Transition{condition}
+}
+{
+  \Transition{$a.\bar{b}$}
+  \Step{\ldots}
+  \Transition{condition}
+}
+\Step{\ldots and merge it here}
+\Transition{\ldots}
+\caption{Divergence}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Duplication
+\section{Duplication: $\backslash$Fork}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Step{Start both steps
+      at the same condition\ldots}
+\Transition{$a.b$}
+\Fork
+{
+  \Step{\ldots}
+  \Transition{condition}
+}
+{
+  \Step{\ldots}
+  \Transition{condition}
+  \Step{\ldots}
+  \Transition{condition}
+}
+\Step{\ldots and merge it here}
+\Transition{\ldots}
+\caption{Duplication / Fork}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Step{Start both steps
+      at the same condition\ldots}
+\Transition{$a.b$}
+\Fork
+{
+  \Step{\ldots}
+  \Transition{condition}
+}
+{
+  \Step{\ldots}
+  \Transition{condition}
+  \Step{\ldots}
+  \Transition{condition}
+}
+\Step{\ldots and merge it here}
+\Transition{\ldots}
+\caption{Duplication / Fork}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+% Loops
+\section{Loops: $\backslash$Loop}
+\noindent
+\begin{tabular}{ll}
+\begin{minipage}{.4\linewidth}
+\begin{verbatim}
+
+\begin{grafcet}
+\Loop{
+    \FirstStep{Displaying the loop}
+    \Transition{start}
+    \Fork
+    {
+      \Step[2]{M1}
+      \Transition{end1}
+      \Step{\ldots}
+      \Nop
+    }
+    {
+      \Step{M2}
+      \Transition{end2}
+      \Step{\ldots}
+      \Nop
+    }
+    \Transition{=1}
+}
+\caption{Loops}
+\end{grafcet}
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}{.45\linewidth}
+\begin{grafcet}
+\Loop{
+    \FirstStep{Displaying the loop}
+    \Transition{start}
+    \Fork
+    {
+      \Step[2]{M1}
+      \Transition{end1}
+      \Step{\ldots}
+      \Nop
+    }
+    {
+      \Step{M2}
+      \Transition{end2}
+      \Step{\ldots}
+      \Nop
+    }
+    \Transition{=1}
+}
+\caption{Loops}
+\end{grafcet}
+\end{minipage}
+\end{tabular}
+
+\end{document}
+
