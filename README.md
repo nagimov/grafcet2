@@ -22,6 +22,7 @@ LATEX package for drawing grafcets (sequential function charts)
     %     # float                                                                  %
     %     # ifthen                                                                 %
     %     # hhline                                                                 %
+    %     # tikz                                                                   %
     % ---------------------------------------------------------------------------- %
     % The syntax of commands:                                                      %
     %                                                                              %
@@ -31,7 +32,7 @@ LATEX package for drawing grafcets (sequential function charts)
     %         proceed execution.                                                   %
     %                                                                              %
     %     \Step{text}                                                              %
-    %         Step block represent the square, executing command.                  %
+    %         Step block represents the square, executing command.                 %
     %                                                                              %
     %     \FirstStep{text}                                                         %
     %         The same as \Step, drawn with a double line, used for the first step %
@@ -40,6 +41,11 @@ LATEX package for drawing grafcets (sequential function charts)
     %     \MacroStep{text}                                                         %
     %         The same as \Step, drawn with extra lines at a top and a bottom of   %
     %         the block.                                                           %
+    %                                                                              %
+    %     \Jump{text}                                                              %
+    %         Jump block represents unconditional jump to another step in the      %
+    %         code. It's somehow equivalent to GOTO command in different           %
+    %         languages. The jump point has to be described in the text block.     %
     %                                                                              %
     %     \Divergence{...}{...}                                                    %
     %         Divergence block is used to represent "OR" conditions. Creates       %
